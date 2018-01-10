@@ -1,0 +1,44 @@
+
+file: apl2core/docs/INSTALL.txt
+
+Download from: https://github.com/jronmorgan/mj_framework.git
+or:  git clone --branch master git@github.com:jronmorgan/mj_framework.git frame
+
+cd frame/3rdParty
+ln -s smarty-3.1.30 Smarty
+
+update DB settings by editing the file: frame/docroot/conf/example.ini
+
+make sure the log files are writable by the web server
+
+make sure the frame/docroot/templates_c directory is writable by the web server
+
+Edit your /etc/hosts file and add something like: frame.localhost
+
+Set up an apache virtual host as:
+
+<Directory /Users/jmorgan/Sites/frame>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+    SetEnv MJ_CONFIG_FILE  /Users/jmorgan/Sites/frame/docroot/projects/ini.php
+    SetEnv MJ_ROOT_PATH    /Users/jmorgan/Sites/frame/
+    SetEnv MJ_LOG_PATH     /Users/jmorgan/Sites/frame/logs/
+    SetEnv MJ_LOG_NAME     frame.log
+    SetEnv MJ_DB_ENC_TOKEN lalala42jojo.fubar
+    SetEnv MJ_INSTALL_TYPE DEV_JOHN
+</Directory>
+<VirtualHost *:80>
+   ServerName frame.localhost
+   DocumentRoot /Users/jmorgan/Sites/frame/docroot
+</VirtualHost>
+
+create the base database by executing the mysql script: core/db/coreDB.sql
+note: initial passwords are NOT encrypted. This is done later.
+      look in the Users table to find your password
+
+Fire up the new site with the following (or similar) URL:
+  http://frame.localhost/login.php
+
+

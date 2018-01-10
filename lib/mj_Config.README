@@ -1,0 +1,88 @@
+file: mj_Config.README
+
+The configuration system reads in a variety of ini files and stores the values as arrays which are  available to your application via the static class variable:  mj_Config::$ini
+
+The basis of this system is the Ini_Struct.php class, documentation for which can be found at:
+
+    http://codeaid.net/php/parse-ini-file-into-a-multi-dimensional-array
+
+Note: This system is intended ONLY for CONFIGURATION. Code should NEVER be placed in configuration and belongs exclusively within the code tree.
+
+Configuration file order of processing. 
+
+Order of processing is critical as each file processed will be merged into the prior and override any values previously set.
+Configuration files may be placed in the code tree or in any directory outside of docroot intended for a given project.
+- Project config files must reside in the same directory as the top level configuration file given by the MJ_CONFIG_FILE environment variable (set in the apache config for the virtual server).
+- As a standard, Project level config files should be located under conf/projects/<projname>
+All Module and Class level configuration files are automatically included if they are found to exist on disk.
+
+1. Top level config is pointed to by the environment vartiable in environment variable MJ_CONFIG_FILE
+   The value supplied must be the fully qualified path and name of the configuration file
+
+2. [AppBase.AdditionalConfig]
+   This config section holds the filenames of random, additional config files and are pathed from docroot.
+   As many files may be included as desired.
+   Each key must begin with "ini." and be numbered in sequence starting with 1
+   - Skipping a number in the sequence will cause the processing to abort. There must not be any gaps in the numbering.
+
+Example AdditionalConfig settings:
+
+[AppBase.AdditionalConfig]
+  ini.1 = 'conf/core.ini.php'
+  ini.2 = 'conf/cmd_handlers.ini.php'
+
+3. Code tree, module level config files
+   These config files are placed in the code tree along with the code of the module they configure 
+   These files have the naming convention of <ModuleName>.ini.php
+
+4. Config tree module level config files.
+   After the code tree configuration file for a given module is processed the project area configuration file is processed next.
+   These files have the same naming convention of <ModuleName>.ini.php except that they reside in the project directory
+
+5. Code tree module:class level config files
+   These config files are placed in the code tree along with the code of the module they configure 
+   These files have the naming convention of <ModuleName>.<ClassName>.ini.php
+
+6. Config tree module:class level config files
+   After the code tree configuration file for a given module:class is processed the project area configuration file is processed next.
+   These files have the naming convention of <ModuleName>.<ClassName>.ini.php 
+
+
+EXAMPLE 1:
+
+Given the module ExampleHello, you would place module level configuration the file: ExampleHello.ini.php
+This file may exist in either the modules/ExampleHello directory AND/OR the conf/projects/<projName> directory.
+The contents of this file would be as follows (configuration at this level MUST be under a category):
+
+[subcategory_a]
+foo_a = bar_a
+
+[subcategory_b]
+foo_b = bar_b
+
+Given the above configuration the values would be retrieved by accessing the variable as:
+   
+   $val = mj_Config::$ini['ExampleHello']['subcategory_a']['foo_a']
+
+EXAMPLE 2:
+
+Given the class HelloHtml which is part of the ExampleHello module and the same configuration data as used in EXAMPLE 1 you would have the configuration file named:
+    ExampleHello.HelloHtml.ini.php 
+
+And access to its configuration would be as follows:
+
+    $val = mj_Config::$ini['ExampleHello']['HelloHtml']['subcategory_a']['foo_a']
+
+----------------------
+
+
+
+
+
+
+
+
+
+
+
+

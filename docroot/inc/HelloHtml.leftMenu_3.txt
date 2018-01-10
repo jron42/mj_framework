@@ -1,0 +1,3 @@
+<br>
+text from HelloHtml.leftMenu_3.txt
+<br>

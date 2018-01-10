@@ -1,0 +1,171 @@
+
+.head {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:11pt;
+	font-weight: 900;
+}
+
+.body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:10pt;
+}
+
+
+.table_body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:9pt;
+}	
+
+.message {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:18pt;
+}
+
+.td {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.th {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:10pt;
+	margin-left:5px;
+	/*margin-botto
+	font-stretch:semi-condensed;*/
+}
+
+.sidebar1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:10pt;
+	margin-left:15px;
+	/*margin-botto
+	font-stretch:semi-condensed;*/
+}
+
+.exp {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:7pt;
+}
+
+.noprint {
+
+}
+
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14pt;
+}
+
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12pt;
+	font-style:italic
+}
+
+table_border {
+	border:thin;
+	
+	border-style:solid;
+	border-color:#000000;
+	padding:0;
+}
+
+.copyright {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:10pt;
+	font-style:italic;
+	margin-left:5px;
+	margin-bottom:10px;
+	/* font-stretch:semi-condensed;*/
+}
+
+A:link { COLOR: black; TEXT-DECORATION: underline }
+A:active { TEXT-DECORATION: underline }
+A:visited { COLOR: black; TEXT-DECORATION: underline }
+A:hover { COLOR: red; TEXT-DECORATION: none }
+
+tr.drugs:hover { background-color:#66CCFF; }
+
+#msg_popup {
+    background-color:#fff;
+    border-radius:15px;
+    color:#000;
+    display:none;
+    padding:20px;
+    min-width:400px;
+    min-height: 180px;
+    max-width:600px;
+    max-height: 300px;
+}
+.bClose{
+    /* background-image: url(img/red_x_16x16.png); */
+    cursor:pointer;
+    position:absolute;
+    width:20px;
+    height:20px;
+    right:10px;
+    top:5px;
+}
+
+/********************************************************************************/
+/* jqModal base Styling courtesy of; Brice Burgess <bhb@iceburg.net> */
+
+/* The Window's CSS z-index value is respected (takes priority). If none is supplied,
+  the Window's z-index value will be set to 3000 by default (in jqModal.js). You
+  can change this value by either;
+    a) supplying one via CSS
+    b) passing the "zIndex" parameter. E.g.  (window).jqm({zIndex: 500}); */
+
+.jqmWindow {
+    display: none;
+
+    position: fixed;
+    top: 17%;
+    left: 50%;
+
+    margin-left: -300px;
+    margin-top: -50px;
+    width: 650px;
+    height: 450px;
+    overflow: auto; 
+
+    background-color: #EEE;
+    color: #333;
+    border: 1px solid black;
+    padding: 12px;
+}
+
+.jqmOverlay { background-color: #000; }
+
+/* Background iframe styling for IE6. Prevents ActiveX bleed-through (<select> form elements, etc.)
+* iframe.jqm {position:absolute;top:0;left:0;z-index:-1;
+        width: expression(this.parentNode.offsetWidth+'px');
+        height: expression(this.parentNode.offsetHeight+'px');
+}
+*/
+
+/* Fixed posistioning emulation for IE6
+ * Star selector used to hide definition from browsers other than IE6
+ * For valid CSS, use a conditional include instead 
+
+* html .jqmWindow {
+  position: absolute;
+  top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+*/
+
+.qaTrEven { }
+.qaTrOdd  { background-color: #DDD; margin-bottom:5px; }
+.qaTdEven { padding-right: 10px; padding-left: 10px; }
+.qaTdOdd  { padding-right: 10px; padding-left: 10px; background-color: #DDD; margin-bottom:5px; }
+.qaTdSum  { padding-right: 10px; padding-left: 20px; background-color: #FAD775; margin-bottom:5px; }
+
+.prodTableLeft  { text-align:left; width:400px; }
+.prodTableRight { text-align:left; width:370px; }
+
+.tableLeft  { text-align:left; }
+.tableRight { text-align:left; }
+

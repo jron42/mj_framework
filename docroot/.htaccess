@@ -1,0 +1,10 @@
+
+
+#SetEnv MJ_CONFIG_FILE  /Users/jmorgan/Sites/zai/apl2core/conf/example.ini
+
+#ExpiresActive On
+#ExpiresDefault "access plus 10 hours"
+
+php_value post_max_size 30M
+php_value upload_max_filesize 30M
+

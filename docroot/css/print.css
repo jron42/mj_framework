@@ -1,0 +1,64 @@
+.head {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:11pt;
+	font-weight: 900;
+}
+
+.body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:10pt;
+}
+
+
+.table_body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:9pt;
+}	
+
+.message {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:18pt;
+}
+
+.td {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.th {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:10pt;
+	margin-left:5px;
+	/*margin-botto
+	font-stretch:semi-condensed;*/
+}
+
+.exp {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:7pt;
+}
+
+.noprint {
+  display: none;
+}
+
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14pt;
+}
+
+table_border {
+	border:thin;
+	
+	border-style:solid;
+	border-color:#000000;
+	padding:0;
+}
+
+A:link { COLOR: black; TEXT-DECORATION: underline }
+A:active { TEXT-DECORATION: underline }
+A:visited { COLOR: black; TEXT-DECORATION: underline }
+A:hover { COLOR: red; TEXT-DECORATION: none }
